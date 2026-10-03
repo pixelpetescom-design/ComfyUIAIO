@@ -3,12 +3,44 @@
     "portable_url": "https://github.com/comfyanonymous/ComfyUI/releases/latest/download/ComfyUI_windows_portable_nvidia.7z"
   },
   "custom_nodes": [
-    { "name": "ComfyUI-Manager",              "repo": "ltdrdata/ComfyUI-Manager" },
-    { "name": "ComfyUI-VideoHelperSuite",     "repo": "Kosinkadink/ComfyUI-VideoHelperSuite" },
-    { "name": "ComfyUI-KJNodes",              "repo": "kijai/ComfyUI-KJNodes" },
-    { "name": "ComfyUI-RMBG",                 "repo": "1038lab/ComfyUI-RMBG" },
-    { "name": "ComfyUI-segment-anything-2",   "repo": "kijai/ComfyUI-segment-anything-2" }
+    {
+      "name": "ComfyUI-Manager",
+      "repo": "ltdrdata/ComfyUI-Manager"
+    },
+    {
+      "name": "ComfyUI-VideoHelperSuite",
+      "repo": "Kosinkadink/ComfyUI-VideoHelperSuite"
+    },
+    {
+      "name": "ComfyUI-KJNodes",
+      "repo": "kijai/ComfyUI-KJNodes"
+    },
+    {
+      "name": "ComfyUI-RMBG",
+      "repo": "1038lab/ComfyUI-RMBG"
+    },
+    {
+      "name": "ComfyUI-segment-anything-2",
+      "repo": "kijai/ComfyUI-segment-anything-2"
+    },
+    {
+      "name": "ComfyUI-3D-Pack",
+      "repo": "MrForExample/ComfyUI-3D-Pack"
+    },
+    {
+      "name": "comfyui_controlnet_aux",
+      "repo": "Fannovel16/comfyui_controlnet_aux"
+    },
+    {
+      "name": "ComfyUI-Hunyuan3DWrapper",
+      "repo": "kijai/ComfyUI-Hunyuan3DWrapper"
+    }
   ],
-  "models": [],
+  "models": [
+    {
+      "url": "https://huggingface.co/diffusers/controlnet-depth-sdxl-1.0/resolve/main/diffusion_pytorch_model.fp16.safetensors",
+      "dest": "models/controlnet/controlnet-depth-sdxl-1.0.fp16.safetensors"
+    }
+  ],
   "workflows": []
 }

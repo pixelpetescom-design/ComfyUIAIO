@@ -5,7 +5,7 @@ needed for AI video green-screen matting, in a single run.
 
 ## What it installs
 Defined in `manifest.json`: ComfyUI portable, ComfyUI-Manager, VideoHelperSuite, KJNodes, RMBG,
-segment-anything-2 (each node's pip requirements are installed into the portable Python).
+segment-anything-2, ComfyUI-3D-Pack (mesh → depth/normal renders), controlnet_aux (depth/normal/line preprocessors), Hunyuan3DWrapper (image → mesh) and an SDXL depth ControlNet (each node's pip requirements are installed into the portable Python).
 Matting models (BiRefNet, SAM2) are auto-downloaded by those nodes on first run; to pre-bundle
 them add entries to `models` (`{"url": "...", "dest": "models/..."}`) and workflow JSONs to `workflows`.
 

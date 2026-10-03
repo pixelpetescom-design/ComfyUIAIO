@@ -56,7 +56,7 @@ foreach ($mo in $m.models) {
     if (Test-Path $out) { continue }
     Step "Downloading model $($mo.dest)"
     New-Item -ItemType Directory -Force (Split-Path $out) | Out-Null
-    Download $mo.url $out
+    try { Download $mo.url $out } catch { Write-Warning "Model failed (skipped): $($mo.dest) - $_"; Remove-Item $out -ErrorAction SilentlyContinue }
 }
 
 # 4. Workflows
