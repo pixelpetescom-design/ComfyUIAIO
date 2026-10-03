@@ -34,6 +34,10 @@
     {
       "name": "ComfyUI-Hunyuan3DWrapper",
       "repo": "kijai/ComfyUI-Hunyuan3DWrapper"
+    },
+    {
+      "name": "ComfyUI-Flowty-TripoSR",
+      "repo": "flowtyone/ComfyUI-Flowty-TripoSR"
     }
   ],
   "models": [
