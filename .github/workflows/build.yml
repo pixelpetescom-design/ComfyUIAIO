@@ -1,0 +1,24 @@
+name: Build installer
+on:
+  push: { branches: [main, "claude/**"], tags: ["v*"] }
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch 7zr
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory build -Force | Out-Null
+          Invoke-WebRequest https://www.7-zip.org/a/7zr.exe -OutFile build/7zr.exe
+      - name: Install Inno Setup
+        run: choco install innosetup -y --no-progress
+      - name: Compile
+        shell: pwsh
+        env: { APP_VERSION: "${{ github.ref_name }}" }
+        run: |
+          if (-not $env:APP_VERSION -or $env:APP_VERSION -match '/') { $env:APP_VERSION = "dev" }
+          & "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe" installer.iss
+      - uses: actions/upload-artifact@v4
+        with: { name: ComfyUIAIO-Setup, path: dist/ComfyUIAIO-Setup.exe }
